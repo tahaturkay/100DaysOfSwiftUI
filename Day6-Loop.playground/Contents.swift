@@ -49,3 +49,63 @@ while random1 != number{
     random1 = Int.random(in: 1...10)
 }
 print("I found the number \(random1)")
+
+let all_numbers = [1,2,3,4,5,6,7,8,9,10]
+
+// By using continue we can skip the loop
+for number in all_numbers{
+    if (number % 2) == 1{
+        continue
+    }
+    print("\(number) is divisible by 2")
+}
+
+// By using "break" we immediately exit the loop.
+let constant1 = 7
+let constant2 = 11
+var multiples = [Int]()
+
+for i in 1...100_000{
+    if (i%constant1 == 0) && (i%constant2 == 0){
+        multiples.append(i)
+    }
+    if multiples.count == 7{
+        print("We get enough multiples")
+        break
+    }
+}
+print(multiples)
+
+// For loop inside loop if we want to completely exit the loops, we specialize the name of the loop and then we write "break nameOfLoop
+let loto_numbers = [9,14,4]
+outerLoop: for i in 1...10{
+    for j in 1...20{
+        for k in 1...10{
+            let current_number = [i,j,k]
+            if current_number == loto_numbers{
+                print("You won the lottery!!!")
+                print("Lottery numbers are \(current_number)")
+                break outerLoop
+            }
+        }
+    }
+}
+
+// ##### Checkpoint-3 #####
+// Task: Fizz, Buzz, FizzBuzz
+
+// I check the conditions of being multiple of 3 and 5. Instead of mod operation, "isMultiple(of:)" also can be used.
+for i in 1..<101{
+    if (i%3 == 0) && (i%5 != 0){
+        print("Fizz")
+    }
+    else if (i%3 != 0) && (i%5 == 0){
+        print("Buzz")
+    }
+    else if (i%3 == 0) && (i%5 == 0){
+        print("FizzBuzz")
+    }
+    else{
+        print(i)
+    }
+}
