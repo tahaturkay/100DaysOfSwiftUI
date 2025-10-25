@@ -134,7 +134,7 @@ let honorStudent = gpa >= 3.00 ? "Yes" : "No"
 let sleepTime = 9
 print(sleepTime >= 8 ? "Deligthful sleep" : "You need to sleep more!")
 
-var checkIn = ["Taha", "Zülal", "Bora","Furkan"]
+var checkIn = ["Taha", "Zülal"]
 let reservation = checkIn.isEmpty ? "There is no reservation" : "\(checkIn.count) people made a reservation"
 print(reservation)
 // Ternary will be useful in SwiftUI in same cases. At some point we can't solve the problem with regular if/else block so we might be have to use ternary operator
