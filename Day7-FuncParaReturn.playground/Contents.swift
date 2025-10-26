@@ -70,3 +70,35 @@ print(dividers().0)
 // We don't have to assign values one by one. We can assign them at one line of code
 let (divider1, divider2) = dividers()
 print(divider2)
+
+func rollDice(surface: Int, count: Int) -> [Int]{
+    var rolledDice = [Int]()
+    for i in 1...count{
+        rolledDice.append(Int.random(in: 1...surface))
+    }
+    return rolledDice
+}
+print(rollDice(surface:12, count:6))
+
+// As you can see using string label name can create confusion instead we can ignore the label name by using "_".
+func isUpperCased(string: String) -> Bool{
+    string == string.uppercased()
+}
+let string = "TAHA"
+isUpperCased(string: string)
+
+// So we can rewrite this code like this.
+func isLowerCased(_ string: String) -> Bool{
+    string != string.uppercased()
+}
+let name = "taha"
+isLowerCased(name)
+
+// We use "number" label name for internally and use "for" for externally label name. We write "for" external name because it sounds more sense. "Print time table for 5 times". If we wouldn't write internal name, for wouldnt work inside code block.
+func printTimesTables(for number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimesTables(for: 5)
