@@ -25,6 +25,8 @@ let password = PasswordError.short
 print(type(of: password))
 
 // If "error" will be thrown in the function before assigning return type we write "throws". In function code block first we write throw conditions.
+// We just throw errors, we don't handle them
+// If ne error throwed, function work as normal and return specified type.
 func passwordChecker(_ userPassword: String) throws -> String{
     if userPassword.count < 5{
         throw PasswordError.short
@@ -45,3 +47,26 @@ func passwordChecker(_ userPassword: String) throws -> String{
 // After error throwed the rest of the code won't work.
 //try passwordChecker("12345")
 try print(passwordChecker("taha1234"))
+
+//Starting a block of work that might throw errors, using do.
+//Calling one or more throwing functions, using try.
+//Handling any thrown errors using catch.
+do {
+    let result = try passwordChecker("123456", )
+    print("Rate of password is: \(result)")
+} catch {
+    print("Handle errors here")
+}
+
+// We can catch specific erors.
+let userPassword = "12345"
+do {
+    let result = try passwordChecker(userPassword)
+    print("Rate of password is: \(result)")
+} catch PasswordError.short {
+    print("Password is short!")
+} catch PasswordError.obvious {
+    print("Password is too obvious")
+} catch {
+    print("There was an error.")
+}
