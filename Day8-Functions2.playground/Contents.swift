@@ -78,3 +78,9 @@ do {
 //If the number is less than 1 or greater than 10,000 you should throw an “out of bounds” error.
 //You should only consider integer square roots – don’t worry about the square root of 3 being 1.732, for example.
 //If you can’t find the square root, throw a “no root” error.
+
+let number = 10_001
+
+enum Boundaries: Error{
+    case outOfBounds
+}
