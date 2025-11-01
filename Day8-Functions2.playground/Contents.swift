@@ -84,7 +84,26 @@ let number = 10_001
 enum Boundaries: Error{
     case outOfBounds
 }
-
 enum noRoot: Error{
     case noRoot
+}
+
+func squareRoot(_ value: Int) throws -> Int{
+    if value > 10_000 || value < 1{
+        throw Boundaries.outOfBounds
+    }
+    for i in 1...100{
+        if i*i == value{
+            return i
+        }
+    }
+    throw noRoot.noRoot
+}
+
+do {
+    let result = try squareRoot(number)
+} catch Boundaries.outOfBounds{
+    print("Number is out of bounds")
+} catch noRoot.noRoot {
+    print("there is no root for such number")
 }
