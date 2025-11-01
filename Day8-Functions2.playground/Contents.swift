@@ -84,3 +84,7 @@ let number = 10_001
 enum Boundaries: Error{
     case outOfBounds
 }
+
+enum noRoot: Error{
+    case noRoot
+}
