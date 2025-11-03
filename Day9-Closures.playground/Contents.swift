@@ -7,6 +7,15 @@ func hello(){
 var helloMessage = hello
 helloMessage()
 
+// Here is an example
+func valueassing()->Int{
+    5
+}
+let assignedValue = valueassing()
+let assignedFunc = valueassing
+print(type(of: assignedValue))
+print(type(of: assignedFunc))
+
 // Also instead of creating seperate function we can directliy assign a functionality to the variables or constants
 let sayHello = {
     print("Directliy created Hello message")
@@ -85,18 +94,18 @@ print(reversedSort)
 // So $0 element is traversal the array as I understand.
 let onlyT = team.filter{ ($0.hasPrefix("T"))}
 print(onlyT)
-
-let upperCasedTeam = team.map{ ($0.uppercased())}
+// We created a chain. First we called map function then called filter function.
+let upperCasedTeam = team.map{ ($0.uppercased())}.filter{($0.hasPrefix("T"))}
 print(upperCasedTeam)
 
 
-func generator() -> Double{
-    Double.random(in: 1...100)
+func generator() -> Int{
+    Int.random(in: 1...100)
 }
 
 // We can use functions as a parameter for the new functions
-func makeArray(size: Int, using generator: ()-> Double ) -> [Double]{
-    var newArray = [Double] ()
+func makeArray(size: Int, using generator: ()-> Int ) -> [Int]{
+    var newArray = [Int] ()
     for _ in 0...size{
         var newNumber = generator()
         newArray.append(newNumber)
@@ -107,9 +116,26 @@ print(makeArray(size: 10, using: generator))
 
 // So, just defining size of makeArray we automatically fill the generator and use it for the rolls function
 let rolls = makeArray(size: 50) {
-    Double.random(in: 1...20)
+    Int.random(in: 1...20)
 }
-
 print(rolls)
 
 // Closures is very important for SwiftUI. I need to make exercises for that topic!!!
+
+// Checkpoint-5
+
+// Your job is to:
+// Filter out any numbers that are even
+// Sort the array in ascending order
+// Map them to strings in the format “7 is a lucky number”
+// Print the resulting array, one item per line
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+let luckyFunc = luckyNumbers
+    .filter{($0 % 2 == 1)}
+    .sorted{($0 < $1)}
+    .map{("\($0) is a lucky number")
+}
+for i in 0...5{
+    print(luckyFunc[i])
+}
