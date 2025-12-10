@@ -13,7 +13,7 @@ rollingDice(surface: 6)
 
 // By calling "keepingCapacity" removeAll will remove all the elements in the "members" but the capacity size will be keep available for future addition into the array. If we wouldn't wrote this the memory also would be released as suppoused to be.
 // So we can say that the parameter of keepingCapacity is also has default value "false" because we can use this function without writing "keepingCapacity:false".
-var members = ["Taha","Zülal"]
+var members = ["Taha","Mustafa"]
 members.removeAll(keepingCapacity: true)
 
 // Handling errors

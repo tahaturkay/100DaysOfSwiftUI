@@ -15,7 +15,7 @@ point += 0.5
 
 // Specialization of array will be like;
 
-var song: [String] = ["Seni Seviyorum", "Deli", "Dene"]
+var song: [String] = ["Numb", "Haydar Haydar", "Got 2 love u"]
 
 // For dictionary specialization it will be like;
 var menu: [String:Int] = ["Burger": 200, "Pizza":230]
@@ -53,7 +53,7 @@ print(type(of: money))
 // Checkpoint 2
 //This time the challenge is to create an array of strings, then write some code that prints the number of items in the array and also the number of unique items in the array.
 
-var attendance = ["Taha","Zülal","Bora","Furkan","Kerem","Taha"]
+var attendance = ["Taha","Mustafa","Bora","Furkan","Kerem","Taha"]
 var unique_of_attendance = Set(attendance)
 attendance.count
 unique_of_attendance.count
